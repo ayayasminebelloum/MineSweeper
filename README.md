@@ -25,14 +25,14 @@ Feel free to customize the README based on your preferences or provide more spec
 
 **Note:** If you have specific details for sections like "Contributing" or "License," you can also make them bold for emphasis.
 
-```markdown
+
 ## **Known Issues**
 
-- *List any known issues or limitations of the current implementation.*
+- *The CPU does not play right after the main player, the user has to click a button to give it a chance to make a move*
 
 ## **Future Improvements**
 
-- *Outline potential future improvements or features you plan to add.*
+- *Better CPU capabilities: we make it able to choose cells strategically not just in order*
 
 ## **Contributing**
 
