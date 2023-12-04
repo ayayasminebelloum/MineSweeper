@@ -6,8 +6,8 @@ This **Minesweeper** game is a simple implementation in Python using the Tkinter
 
 - [**Installation**](#installation)
 - [**Usage**](#usage)
-- [**Kown Issues**](#known Issues)
-- [**Future Improvements**](#future improvements)
+- [**Known Issues**](#known-issues)
+- [**Future Improvements**](#future-improvements)
 - [**Contributing**](#contributing)
 
 ## **Installation**
