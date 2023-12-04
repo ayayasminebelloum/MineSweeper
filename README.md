@@ -18,3 +18,31 @@ This **Minesweeper** game is a simple implementation in Python using the Tkinter
 
    ```bash
    git clone https://github.com/your-username/Minesweeper.git
+
+   ---
+
+Feel free to customize the README based on your preferences or provide more specific details about the implementation, features, and usage. Add sections like "Dependencies," "Known Issues," or "Future Improvements" if needed.
+
+**Note:** If you have specific details for sections like "Contributing" or "License," you can also make them bold for emphasis.
+
+```markdown
+## **Known Issues**
+
+- *List any known issues or limitations of the current implementation.*
+
+## **Future Improvements**
+
+- *Outline potential future improvements or features you plan to add.*
+
+## **Contributing**
+
+Baptiste Etroy
+Aya-Yasmine Belloum
+Ronald Beltran
+Anna Payne
+
+
+## **License**
+
+This Minesweeper game is open-source and available under the [**MIT License**](LICENSE).
+
