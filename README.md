@@ -16,16 +16,20 @@ This **Minesweeper** game is a simple implementation in Python using the Tkinter
 
    ```bash
    git clone https://github.com/your-username/Minesweeper.git
-
    ---
 
 
 **Note:** If you have specific details for sections like "Contributing" or "License," you can also make them bold for emphasis.
 
+2. Install requirements
+
+   ```bash
+   pip install -r requirements.txt
+   ---
 
 ## **Known Issues**
 
-- The CPU does not play right after the main player, the user has to click a button to give it a chance to make a move
+- The CPU player does not play right after the main player, the user has to click a button to give it a chance to make a move
 
 ## **Future Improvements**
 
