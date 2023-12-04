@@ -33,7 +33,7 @@ This **Minesweeper** game is a simple implementation in Python using the Tkinter
 
 ## **Contributing**
 
-Baptiste Etroy
-Aya-Yasmine Belloum
-Ronald Beltran
-Anna Payne
+- Baptiste Etroy
+- Aya-Yasmine Belloum
+- Ronald Beltran
+- Anna Payne
