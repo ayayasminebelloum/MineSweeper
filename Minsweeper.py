@@ -7,7 +7,6 @@ import random
 # b is unhidden bomb
 # f is flagged cell
 
-
 def onClick(event): #this is the clicking function, its wired to the left/right click, it runs everytime you click on canvas
     global points, flags
 
@@ -78,7 +77,6 @@ def floodFill(i, j):
                 for y in range(max(0, j - 1), min(16, j + 2)):
                     if field[x][y] == 'hn':
                         floodFill(x, y)
-
 
 def draw(): # this is the drawing function, it redraws the canvas everytime you click in case there are changes
     canvas.delete(ALL)

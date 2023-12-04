@@ -1,6 +1,6 @@
 from tkinter import *
 import random
-
+import time
 
 # hn is hidden nothing
 # n is unhidden nothing
@@ -8,8 +8,6 @@ import random
 # b is unhidden bomb
 # f is flagged cell
 # fb is flagged bomb
-
-
 
 # Moves stack
 moves_stack = []
@@ -38,10 +36,10 @@ def onClick(event):
     i = event.x // 20
     j = event.y // 20
 
-    if event.num == 1:  # Left-click
-        left_click(i, j)
-    elif event.num == 2:  # Right-click
+    if event.num == 2:
         right_click(i, j)
+    elif event.num == 1:  # Left-click
+        left_click(i, j)
 
     print("Flags:", flags)
     print()
@@ -68,29 +66,29 @@ def left_click(i, j):
         push_move('left-click', i, j)
     elif field[i][j] == 'hb':
         field[i][j] = 'b'
-        GameOver()
         print('You lost')
         print('You touched a Bomb.')
-        window.destroy()
+        GameOver()
         return
 
 def right_click(i, j):
     global points, flags
     if field[i][j] == 'hn':
         flags -= 1
-        field[i][j] = 'f'
+        field[i][j] = 'fn'
     elif field[i][j] == 'hb':
         flags -= 1
         points += 1
         field[i][j] = 'fb'
-    elif field[i][j] == 'f':
+    elif field[i][j] == 'fn':
         flags += 1
         field[i][j] = 'hn'
     elif field[i][j] == 'fb':
         flags += 1
+        points -= 1
         field[i][j] = 'hb'
-    draw()
     push_move('right-click', i, j)
+    draw()
 
 def floodFill(i, j):
     if i < 0 or j < 0 or i >= 30 or j >= 16:
@@ -109,7 +107,6 @@ def floodFill(i, j):
                     if field[x][y] == 'hn':
                         floodFill(x, y)
 
-
 def GameOver():
     canvas.delete(ALL)
     for i in range(30):
@@ -120,8 +117,13 @@ def GameOver():
             elif field[i][j] == 'fb':
                 canvas.create_rectangle(i * 20, j * 20, i * 20 + 20, j * 20 + 20, fill='white')
                 canvas.create_oval(i * 20, j * 20, i * 20 + 20, j * 20 + 20, fill='yellow')
+            elif field[i][j] == 'fn':
+                canvas.create_rectangle(i * 20, j * 20, i * 20 + 20, j * 20 + 20, fill='white')
+                canvas.create_oval(i * 20, j * 20, i * 20 + 20, j * 20 + 20, fill='yellow')
             else:
                 canvas.create_rectangle(i * 20, j * 20, i * 20 + 20, j * 20 + 20, fill='white')
+    time.sleep(2)
+    window.destroy()
 
 def undo_cpu():
     move = pop_move()
@@ -171,7 +173,7 @@ def draw():
                 else:
                     floodFill(i, j)
                     canvas.create_rectangle(i * 20, j * 20, i * 20 + 20, j * 20 + 20, fill='white')
-            elif field[i][j] == 'fb':
+            elif field[i][j] == 'fb' or field[i][j] == 'fn':
                 canvas.create_rectangle(i * 20, j * 20, i * 20 + 20, j * 20 + 20, fill='yellow')
                 canvas.create_text(i * 20 + 10, j * 20 + 10, text='F', fill='black')
 
